@@ -1,74 +1,78 @@
 <template>
-  <div class="big">
-    <div class="first-page">
-      <div class="left-profile">
-        <img
-          height="100"
-          width="100"
-          class="creator-image"
-          src="../assets/creator.jpg"
-          alt="creator"
-        />
-        <button class="subscribe">Subscribe</button>
-      </div>
-      <div class="right-profile">
-        <div class="user-info">
-          <h2 class="creator-name">Tristan Pollock</h2>
-          <p class="creator-history">
-            2X Founder // VC // Community Movement Builder
-          </p>
-          <p class="location">
-            <span class="location-detail"
-              ><img
-                height="20"
-                width="20"
-                src="../assets/location.png"
-                alt="location"
-            /></span>
-            <span class="location-detail">San Fransisco</span>
-          </p>
-        </div>
-        <div class="description">
-          <p class="creator-description">
-            I've built and sold 2 startups. Invested $30M as a VC in Silicon
-            Valley. Spent way too much time on ProductHunt (top hunter in
-            upvotes/hunt ratio). I owe the value I've created to growing
-            communities and building network movements around products,
-            customers, and thought leadership. Mission-driven first and always.
-            Let's bring more positive impact into technology. Net worth = your
-            lifetime positive impact on the world. Here to help you grow more in
-            your life than you can ever expect from you.
-            <!-- {{ ToDo.bio }} -->
-          </p>
-        </div>
-        <div class="help">
-          <p class="help-line">How can I help?</p>
-          <div class="creator-features">
-            <button class="button">
-              <span class="service">30m ProductHunt Strategy</span>
-            </button>
-            <button class="button">
-              <span class="service">45m Product/Growth</span>
-            </button>
-            <button class="button">
-              <span class="service">45m Pitch/Fundraising</span>
-            </button>
-          </div>
-        </div>
-        <div class="coupons">
+  <section>
+    <div class="big">
+      <div class="first-page">
+        <div class="left-profile">
           <img
-            class="donation-image"
-            src="../assets/badge.png"
-            alt="donation"
+            height="100"
+            width="100"
+            class="creator-image"
+            src="../assets/creator.jpg"
+            alt="creator"
           />
-          <p class="donate-text">10% goes to Black Girls CODE</p>
+          <button class="subscribe">Subscribe</button>
+        </div>
+        <div class="right-profile">
+          <div class="user-info">
+            <h2 class="creator-name">Tristan Pollock</h2>
+            <p class="creator-history">
+              2X Founder // VC // Community Movement Builder
+            </p>
+            <p class="location">
+              <span class="location-detail"
+                ><img
+                  height="20"
+                  width="20"
+                  src="../assets/location.png"
+                  alt="location"
+              /></span>
+              <span class="location-detail">San Fransisco</span>
+            </p>
+          </div>
+          <div class="info-containe">
+            <div class="description">
+              <p class="creator-description">
+                I've built and sold 2 startups. Invested $30M as a VC in Silicon
+                Valley. Spent way too much time on ProductHunt (top hunter in
+                upvotes/hunt ratio). I owe the value I've created to growing
+                communities and building network movements around products,
+                customers, and thought leadership. Mission-driven first and
+                always. Let's bring more positive impact into technology. Net
+                worth = your lifetime positive impact on the world. Here to help
+                you grow more in your life than you can ever expect from you.
+                <!-- {{ ToDo.bio }} -->
+              </p>
+            </div>
+            <div class="help">
+              <p class="help-line">How can I help?</p>
+              <div class="creator-features">
+                <button class="button">
+                  <span class="service">30m ProductHunt Strategy</span>
+                </button>
+                <button class="button">
+                  <span class="service">45m Product/Growth</span>
+                </button>
+                <button class="button">
+                  <span class="service">45m Pitch/Fundraising</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="coupons">
+            <img
+              class="donation-image"
+              src="../assets/badge.png"
+              alt="donation"
+            />
+            <p class="donate-text">10% goes to Black Girls CODE</p>
+          </div>
         </div>
       </div>
     </div>
-    <Series />
-    <Series />
-    <Series />
-  </div>
+  </section>
+  <Series />
+  <Series />
+  <Series />
 </template>
 
 <script>
@@ -108,14 +112,22 @@ export default {
 .big {
   display: flex;
   flex-direction: column;
-
   margin-top: 0%;
+  @media (max-width: 468px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    min-width: 440px;
+  }
   .first-page {
-    height: 100vh;
-    // border: solid black 1px;
     display: flex;
     margin-top: 30px;
     margin-bottom: 10px;
+    @media (max-width: 468px) {
+      display: flex;
+      flex-direction: column;
+    }
 
     .left-profile {
       flex: 1;
@@ -124,6 +136,11 @@ export default {
       align-items: flex-end;
       flex-direction: column;
       margin-left: 150px;
+      @media (max-width: 468px) {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+      }
 
       .creator-image {
         border-radius: 100%;
@@ -162,26 +179,49 @@ export default {
       padding-top: 1.5rem;
       margin-left: 0%;
       padding-left: 1.75rem;
+
+      @media (max-width: 468px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+      }
       .user-info {
         display: flex;
         flex-direction: column;
-        max-width: 540px;
+        min-width: 440px;
         align-items: flex-start;
-
         margin-bottom: 0px;
+        @media (max-width: 468px) {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin: auto;
+        }
         .creator-name {
           font-size: 2rem;
           color: #222;
           margin-bottom: 7px;
           margin-top: 0px;
           font-weight: 600;
+          @media (max-width: 468px) {
+            font-size: 1.8rem;
+          }
         }
         .creator-history {
           color: #515151;
           margin-bottom: 8px;
           margin-top: 1px;
           font-size: 15px;
+          text-align: justify;
+          @media (max-width: 468px) {
+            font-size: 13px;
+            margin-top: 0px;
+            min-width: 300px;
+            margin-right: 10%;
+          }
         }
+
         .location {
           display: flex;
           font-size: 0.875rem;
@@ -192,14 +232,23 @@ export default {
       }
       .description {
         margin-top: 0px;
-
         display: flex;
         flex-wrap: wrap;
-        max-width: 500px;
+        max-width: 550px;
+        //  border: solid black 1px;
+        @media (max-width: 468px) {
+          margin-right: 20px;
+        }
         .creator-description {
           align-items: flex-start;
           line-height: 1.5em;
           text-align: justify;
+          @media (max-width: 468px) {
+            font-size: 15px;
+            // border: solid black 1px;
+            margin-top: auto;
+            margin-left: 0px;
+          }
         }
       }
       .help {
@@ -208,17 +257,35 @@ export default {
         flex-direction: column;
         align-items: flex-start;
         margin-bottom: 0px;
+        @media (max-width: 468px) {
+          display: flex;
+          flex-direction: column;
+          margin-top: 5%;
+
+          align-items: center;
+        }
         .help-line {
           margin-top: 0%;
           font-size: 14px;
           font-weight: bolder;
           margin-bottom: 0%;
+          @media (max-width: 468px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-weight: bolder;
+          }
         }
 
         .creator-features {
           margin-top: 0px;
           display: flex;
           flex-wrap: wrap;
+          @media (max-width: 468px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
           .button {
             margin-top: 1.5rem;
             height: 40px;
@@ -233,11 +300,18 @@ export default {
             font-size: 1rem;
             outline: none;
             cursor: pointer;
-            margin-right: 50px;
+            margin-right: 45px;
             transition: 0.5s ease-in-out;
             &:hover {
               color: white;
               background-color: #064288;
+            }
+            @media (max-width: 468px) {
+              //   display: flex;
+              //   flex-direction: column;
+              //   align-items: center;
+              margin-left: auto;
+              margin-right: auto;
             }
           }
         }
@@ -251,6 +325,11 @@ export default {
         max-width: 180px;
         padding: 0.5rem;
         border: 1px solid #e1e1e1;
+        @media (max-width: 468px) {
+          display: flex;
+          flex-direction: row;
+          margin-top: 20px;
+        }
         .donation-image {
           height: 28px;
           width: 28px;

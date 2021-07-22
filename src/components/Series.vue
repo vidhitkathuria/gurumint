@@ -82,6 +82,10 @@ section {
     flex-direction: column;
     justify-content: center;
     max-width: 800px;
+    @media (max-width: 468px) {
+      display: block;
+      min-width: 440px;
+    }
 
     .second-container {
       font-size: 14px;
@@ -100,6 +104,11 @@ section {
       justify-items: center;
       background-color: #fffaf0;
       box-shadow: 2px 8px 8px #f7ebd8;
+      @media (max-width: 468px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
 
       .image {
         flex: 1;
@@ -108,6 +117,15 @@ section {
         object-fit: contain;
         max-width: 250px;
         max-height: 170px;
+        @media (max-width: 468px) {
+          align-items: center;
+          min-width: 330px;
+          min-height: 200px;
+          object-fit: contain;
+          align-items: center;
+          margin-left: auto;
+          margin-right: auto;
+        }
 
         .card-image {
           margin-left: 20%;
@@ -115,6 +133,13 @@ section {
           height: 100%;
           border-radius: 8px;
           vertical-align: top;
+
+          @media (max-width: 468px) {
+            //   display: flex;
+            //   flex-direction: column;
+            //   align-items: center;
+            margin-left: auto;
+          }
         }
       }
       .information {
